@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crime Inspections</title>
+    </head>
+    <body>
+        <h1>Crime Inspections</h1>
+        <button id="submit">Submit</button>
+        <div id="results"></div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script>
+            /*
+                This script retrieves the towed data information
+                from the City of Chicago Data Portal
+                
+                You are required to enter the information for your vehicle
+                as a license plate number
+            
+            */
+            
+            var inspectionsURL;
+            
+            $(function(){
+                
+                $("#submit").click(function(){
+                    
+                    var html = "";
+                    
+                    // base URL to the food inspections data
+                    var baseURL = 'https://data.cityofchicago.org/resource/cwig-ma7x.json';
+                    
+                    // optional filters we're appending - date range and zip
+                    var filters = "";
+                    
+                    // full URL
+                    var url = baseURL;
+                        
+                    $.getJSON(url).done (function (data) {
+                        // TODO:  add script to add data to the DOM
+                        console.log(data);
+                        // loop through the records
+                        
+                        inspectionsURL = data;
+                        
+                        var date = inspectionsURL[0].inspections_date;
+
+                        var one = 0, two = 0, three = 0;
+                        
+                        if(inspectionsURL.length == 0){
+                            html = "No Inspections";
+                        } else{
+                            $.each(inspectionsURL, function(index, value){
+                                if(value.inspections_date == date){
+                                    var risk = value.risk;
+                                    if(risk == "Risk 1 (High)")
+                                        one++;
+                                    else if(risk == "Risk 2 (Medium)") 
+                                        two++;
+                                    else if(risk == "Risk 3 (Low)")
+                                        three++;
+                                }
+                            })  // end of .each loop
+                            
+                            /*html = "<p>Blue: " + blu + "<br>" +
+                                    "Red: " + red + "</p>";*/
+                            // Load the Visualization API and the corechart package.
+                          google.charts.load('current', {'packages':['corechart']});
+                    
+                          // Set a callback to run when the Google Visualization API is loaded.
+                          google.charts.setOnLoadCallback(drawChart);
+                    
+                          // Callback that creates and populates a data table,
+                          // instantiates the pie chart, passes in the data and
+                          // draws it.
+                          function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Risk', 'Quantity'],
+          ['One',     one],
+          ['Two',      two],
+          ['Three',  three]
+       
+        ]);
+
+        var options = {
+          title: 'Crime Risk Rankings'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('results'));
+
+        chart.draw(data, options);
+      }
+                        }
+                        
+                        //$("#results").html(html);
+                        
+                    }) // end of getJSON function
+                    
+                })  // end of click function
+                
+            }) // end of ready command
+            
+            
+        </script>
+    </body>
+</html>
