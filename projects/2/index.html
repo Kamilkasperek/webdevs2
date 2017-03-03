@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <style>
+    body {background-color: #FFA500;}
+  #Northbound{
+    width: 25%;
+    float: left;
+  }
+  #Southbound{
+    width: 25%;
+    float: left;  
+  }
+   #Westbound{
+    width: 25%;
+    float: left;  
+  }
+   #Eastbound{
+    width: 25%;
+    float: left;  
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+     <div id="Northbound">
+     </div>
+     <div id="Southbound">
+     </div>
+     <div id="Eastbound">
+     </div>
+     <div id="Westbound">
+     </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+
+        $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://www.ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "yqsE5uWnZsg3xdX3VWMemh8Mv",
+                      "rt": "49,152",
+                      "stpid": "8417,8195,12527,12569",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $("body").append("<h1>Bus Routes</h1>");
+          
+              $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("body").append("Route #" + v.rt + ", " + v.rtdir + ", " + v.prdctdn + "<br>");
+            
+                var Northbound = ",";
+                var Eastbound = ",";
+                var Westbound = ",";
+                var Southbound = ",";
+              })
+
+            });
+        });
+  
+</script>
+</body>
+</html>
