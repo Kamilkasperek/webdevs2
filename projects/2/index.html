@@ -1,75 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>jQuery.parseXML demo</title>
-  <link rel="stylesheet" type="text/css" href="main.css"/>
-  <style>
-    body {background-color: #FFA500;}
-  #Northbound{
-    width: 25%;
-    float: left;
-  }
-  #Southbound{
-    width: 25%;
-    float: left;  
-  }
-   #Westbound{
-    width: 25%;
-    float: left;  
-  }
-   #Eastbound{
-    width: 25%;
-    float: left;  
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-     <div id="Northbound">
-     </div>
-     <div id="Southbound">
-     </div>
-     <div id="Eastbound">
-     </div>
-     <div id="Westbound">
-     </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CTA BusTracker</title>
+      <style>
+         p, h1 {font-family: helvetica;}
+         p {font-size:1.5em;line-height:1.5em; margin-left: 24px;}
+         pre {font-size: 2em;}
+         div { background-color: white}
+         #westDiv { border: 5px solid black; margin: 4px; border-radius: 5px;}
+         body {background: #c0c0aa; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #c0c0aa , #1ce); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #c0c0aa , #1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+;}
+         .streetButton {color: white; background-color:black; border: 10px solid black;;}
+         a:link    {color:blue; background-color:transparent; text-decoration:none}
+         a:visited {color:black; background-color:transparent; text-decoration:none}
+         a:hover   {color:black; background-color:transparent; text-decoration:none}
+         a:active  {color:black; background-color:transparent; text-decoration:none}      
+      </style>
+      <script src="https://code.jquery.com/jquery-1.210.2.js"></script>
+    </head>
+    
+    <body>
+     
+        <h1>CTA Addison and Western Bus Tracker</h1>
+        <p style="color:white;">This CTA Bus Tracker will allow people to figure out the time schedule for Addison and Western bus stops around the Lane Tech area.
+          
+        <div id="westDiv" style="float:left; width:30%;">
+             <a href="western.html"><h2 class="streetButton">49 Western/X49 Western Express Routes</h2></a>
+        </div>
+          
+         <div id="westDiv" style="float:right; width:30%;">
+             <a href="addison.html"><h2 class="streetButton">152 Addison Routes</h2></a>
+        </div>
+     
+    </body>
 
-        $(function() {
-          
-          
-          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
-          
-          var apiEndpoint = "http://www.ctabustracker.com/bustime/api/v2/getpredictions";
-          
-          
-          $.ajax({
-              url: apiPassThruUrl,
-              dataType: "json",
-              method: 'GET',
-              data: {"apiEndpoint": apiEndpoint,
-                      "key" : "yqsE5uWnZsg3xdX3VWMemh8Mv",
-                      "rt": "49,152",
-                      "stpid": "8417,8195,12527,12569",
-                      "format":"json"}
-            }).done (function (data) {
-              console.log(data);
-              $("body").append("<h1>Bus Routes</h1>");
-          
-              $.each(data["bustime-response"]["prd"], function(i,v) {
-                  $("body").append("Route #" + v.rt + ", " + v.rtdir + ", " + v.prdctdn + "<br>");
-            
-                var Northbound = ",";
-                var Eastbound = ",";
-                var Westbound = ",";
-                var Southbound = ",";
-              })
-
-            });
-        });
-  
-</script>
-</body>
 </html>
