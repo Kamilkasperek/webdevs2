@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NBA Statistics</title>
+        <style>
+            p, h2 {font-family: helvetica;}
+            p {font-size:1.5em;line-height:1.5em; margin-left: 24px;}
+            pre {font-size: 2em;}
+            #potholes { font-size: 1.5em; border: 1px solid black; margin: 4px; border-radius: 5px; background-color: #ededed}
+            .template { display: none;}
+        </style>
+    </head>
+    <body>
+
+    <h1>NBA Standings and League Leaders</h1>
+    
+    <div class="template potholes">
+        <h1 class="serviceType"></h1>
+        <p>
+            Service Request Number: <span class="number"></span><br>
+            Status: <span class="status"></span>
+        </p>
+    </div>
+    
+    <div id="results">
+        
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+              
+              
+              var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+              
+              var apiEndpoint = "http://api.sportradar.us/nba-t3/seasontd/2016/REG/standings.json";
+              
+              //var findBus = $("find").val();
+              
+              $.ajax({
+                  url: apiPassThruUrl,
+                  dataType: "json",
+                  method: 'GET',
+                  data: {"apiEndpoint": apiEndpoint,
+                          "api_key" : "h3fe7pqtyjdgn7q4s3vtenbf",
+                          "season_id" : "2016",
+                          "nba_season" : "REG",
+                          "format":"json"}
+                }).done (function (data) {
+                  console.log(data);
+                  
+                   $.each(data.conferences, function(index, value){
+                                console.log(value);
+                                var html= value.alias + "<br>";
+                                $.each(value.divisions, function(indexDiv, valueDiv){
+                                    html+=valueDiv.alias + "<br>";
+                                              $.each(data.teams, function(indexTM, valueTM){
+                                              console.log(value);
+                                              var html= value.alias + "<br>";
+                                                      $.each(value.market, function(indexMkt, valueMkt){
+                                                      html+=valueMkt.alias + "<br>";
+                                                          $.each(value.name, function(indexNm, valueNm){
+                                                          html+=valueNm.alias + "<br>";
+                                                              $.each(value.wins, function(indexWin, valueWin){
+                                                              html+=valueWin.alias + "<br>";
+                                                                  $.each(value.losses, function(indexLos, valueLos){
+                                                                  html+=valueLos.alias + "<br>";
+                                                                      $.each(value.win_pct, function(indexWpc, valueWpc){
+                                                                      html+=valueWpc.alias + "<br>";
+                                                                      
+                                                
+                                    
+                                    
+                                });
+                                // '<div id="results"><h3>'+value.headline.main+'</h3> '+
+                                // '<p>date: ' + value.pub_date +"</p>" + 
+                                // '<p>source: ' +value.source + "</p>"+ 
+                                // '<p>section name: ' +value.section_name + "</p>"+
+                                // '<p>type of material: ' +value.type_of_material + "</p>"+
+                                // '<p>word count: ' +value.word_count + "</P>"
+                                // '</div>';
+                                
+                                $("body").append(html);
+                            })
+                  
+                  /*$.each(data["bustime-response"]["prd"], function(i,v) {
+
+                     
+                     
+                    
+                  })*/
+    
+                });
+            });
+        
+        
+        
+        
+        
+        
+        /*
+            This script retrieves 311 pot hole service request data for 
+            from the 
+            City of Chicago Data Portal
+            
+            This script doesn't update the DOM.
+
+        */
+
+        // base URL to the food inspections data
+        // var baseURL = 'https://api.sportradar.us/nba-t3/seasontd/2016/REG/standings.json?api_key=h3fe7pqtyjdgn7q4s3vtenbf';
+        
+        // // optional filters we're appending - status
+        // //var filters = '?zip=60647';
+        
+        // // full URL
+        // var url = baseURL //+ filters;
+        
+        // console.log (url);
+        
+        // $(
+        //     // jQuery command to retrieve json data
+            
+        //     $.getJSON(url)
+        //         .done (function (data) {
+        //             // TODO:  add script to add data to the DOM
+        //             console.log(data);
+        //             //var date = data[0].creation_date;
+        //             var clone;
+
+        //             // loop through the records
+                    
+        //             $.each(data, function(index, value){
+                        
+        //                 // clone = $(".template").clone();
+        //                 // clone.removeClass("template");
+        //                 // clone.find(".serviceType").text(value.type_of_service_request);
+        //                 // clone.find(".number").text(value.service_request_number);
+        //                 // clone.find(".status").text(value.status);
+                        
+        //                 // $("#results").append(clone);
+                        
+        //               /*var html = "<div><h1>" + value.type_of_service_request + "</h1>" +
+        //                             "<p>" +
+        //                             "Service request number: " + value.service_request_number +
+        //                             "<br>Status: " + value.status +
+        //                             "</p>" +
+        //                             "</div>";
+                                    
+        //                 $("body").append(html);*/
+        //             });
+        //         })
+            
+            
+        // )
+        
+        
+    </script>
+    </body>
+</html>

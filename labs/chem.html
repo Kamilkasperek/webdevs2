@@ -1,0 +1,582 @@
+
+<html>
+<head>
+<title>The test</title>
+<script>
+function CheckAnswer()
+{
+alert(ans);
+}
+</script>
+
+</head>
+<body>
+<script>
+document.write("This is the test.  Read all directions and pay attention what is said in the directions.  If you finish early (and many of you will) please quietly work on the midterm study guide until the end of class.<br><br>");
+
+var r_cat = new Array();
+r_cat[0] = "lithium";
+r_cat[1] = "sodium";
+r_cat[2] = "potassium";
+r_cat[3] = "cesium";
+r_cat[4] = "rubidium";
+r_cat[5] = "magnesium";
+r_cat[6] = "calcium";
+r_cat[7] = "strontium";
+r_cat[8] = "barium";
+r_cat[9] = "aluminum";
+r_cat[10] = "zinc";
+r_cat[11] = "cadmium";
+r_cat[12] = "silver";
+r_cat[13] = "iron (II )";
+r_cat[14] = "iron (III)";
+r_cat[15] = "chromium (III) ";
+r_cat[16] = "copper (I)";
+r_cat[17] = "copper (II)";
+r_cat[18] = "cobalt (II)";
+r_cat[19] = "cobalt (III)";
+r_cat[20] = "tin (II)";
+r_cat[21] = "lead (II)";
+r_cat[22] = "mercury (II)";
+r_cat[23] = "tin (IV) ";
+r_cat[24] = "lead (IV)";
+r_cat[25] = "manganese (II)";
+r_cat[26] = "manganese (III)";
+r_cat[27] = "nickel (II)";
+r_cat[28] = "nickel (III)";
+r_cat[29] = "ammonium";
+r_cat[30] = "mercury (I)";
+
+
+var r_catsymbol = new Array();
+r_catsymbol[0] = "Li";
+r_catsymbol[1] = "Na";
+r_catsymbol[2] = "K";
+r_catsymbol[3] = "Cs";
+r_catsymbol[4] = "Rb";
+r_catsymbol[5] = "Mg";
+r_catsymbol[6] = "Ca";
+r_catsymbol[7] = "Sr";
+r_catsymbol[8] = "Ba";
+r_catsymbol[9] = "Al";
+r_catsymbol[10] = "Zn";
+r_catsymbol[11] = "Cd";
+r_catsymbol[12] = "Ag";
+r_catsymbol[13] = "Fe";
+r_catsymbol[14] = "Fe";
+r_catsymbol[15] = "Cr";
+r_catsymbol[16] = "Cu";
+r_catsymbol[17] = "Cu";
+r_catsymbol[18] = "Co";
+r_catsymbol[19] = "Co";
+r_catsymbol[20] = "Sn";
+r_catsymbol[21] = "Pb";
+r_catsymbol[22] = "Hg";
+r_catsymbol[23] = "Sn";
+r_catsymbol[24] = "Pb";
+r_catsymbol[25] = "Mn";
+r_catsymbol[26] = "Mn";
+r_catsymbol[27] = "Ni";
+r_catsymbol[28] = "Ni";
+r_catsymbol[29] = "NH<SUB>4</SUB>";
+r_catsymbol[30] = "Hg<SUB>2</SUB>";
+
+var r_catcharge = new Array();
+r_catcharge[0] = 1;
+r_catcharge[1] = 1;
+r_catcharge[2] = 1;
+r_catcharge[3] = 1;
+r_catcharge[4] = 1;
+r_catcharge[5] = 2;
+r_catcharge[6] = 2;
+r_catcharge[7] = 2;
+r_catcharge[8] = 2;
+r_catcharge[9] = 3;
+r_catcharge[10] = 2;
+r_catcharge[11] = 2;
+r_catcharge[12] = 1;
+r_catcharge[13] = 2;
+r_catcharge[14] = 3;
+r_catcharge[15] = 3;
+r_catcharge[16] = 1;
+r_catcharge[17] = 2;
+r_catcharge[18] = 2;
+r_catcharge[19] = 3;
+r_catcharge[20] = 2;
+r_catcharge[21] = 2;
+r_catcharge[22] = 2;
+r_catcharge[23] = 4;
+r_catcharge[24] = 4;
+r_catcharge[25] = 2;
+r_catcharge[26] = 3;
+r_catcharge[27] = 2;
+r_catcharge[28] = 3;
+r_catcharge[29] = 1;
+r_catcharge[30] = 2;
+
+var catpoly = new Array();
+catpoly[0] = 1;
+catpoly[1] = 1;
+catpoly[2] = 1;
+catpoly[3] = 1;
+catpoly[4] = 1;
+catpoly[5] = 1;
+catpoly[6] = 1;
+catpoly[7] = 1;
+catpoly[8] = 1;
+catpoly[9] = 1;
+catpoly[10] = 1;
+catpoly[11] = 1;
+catpoly[12] = 1;
+catpoly[13] = 1;
+catpoly[14] = 1;
+catpoly[15] = 1;
+catpoly[16] = 1;
+catpoly[17] = 1;
+catpoly[18] = 1;
+catpoly[19] = 1;
+catpoly[20] = 1;
+catpoly[21] = 1;
+catpoly[22] = 1;
+catpoly[23] = 1;
+catpoly[24] = 1;
+catpoly[25] = 1;
+catpoly[26] = 1;
+catpoly[27] = 1;
+catpoly[28] = 1;
+catpoly[29] = 2;
+catpoly[30] = 2;
+
+var r_an = new Array();
+r_an[0] = "fluoride";
+r_an[1] = "chloride";
+r_an[2] = "bromide";
+r_an[3] = "iodide";
+r_an[4] = "oxide";
+r_an[5] = "sulfide";
+r_an[6] = "nitride";
+r_an[7] = "phosphide";
+r_an[8] = "chlorate";
+r_an[9] = "nitrate";
+r_an[10] = "sulfite";
+r_an[11] = "sulfate";
+r_an[12] = "phosphate";
+r_an[13] = "carbonate";
+r_an[14] = "hydroxide";
+r_an[15] = "cyanide";
+r_an[16] = "hypochlorite";
+r_an[17] = "chlorite";
+r_an[18] = "perchlorate";
+r_an[19] = "acetate";
+r_an[20] = "nitrite";
+r_an[21] = "biphosphate";
+r_an[22] = "dihygrogen phosphate";
+r_an[23] = "dichromate";
+r_an[24] = "chromate";
+r_an[25] = "bicarbonate";
+r_an[26] = "permanganate";
+r_an[27] = "phosphite";
+r_an[28] = "citrate";
+r_an[29] = "arsenate";
+
+var r_ansymbol = new Array();
+r_ansymbol[0] = "F";
+r_ansymbol[1] = "Cl";
+r_ansymbol[2] = "Br";
+r_ansymbol[3] = "I";
+r_ansymbol[4] = "O";
+r_ansymbol[5] = "S";
+r_ansymbol[6] = "N";
+r_ansymbol[7] = "P";
+r_ansymbol[8] = "ClO<SUB>3</SUB>";
+r_ansymbol[9] = "NO<SUB>3</SUB>";
+r_ansymbol[10] = "SO<SUB>3</SUB>";
+r_ansymbol[11] = "SO<SUB>4</SUB>";
+r_ansymbol[12] = "PO<SUB>4</SUB>";
+r_ansymbol[13] = "CO<SUB>3</SUB>";
+r_ansymbol[14] = "OH";
+r_ansymbol[15] = "CN";
+r_ansymbol[16] = "ClO";
+r_ansymbol[17] = "ClO<SUB>2</SUB>";
+r_ansymbol[18] = "ClO<SUB>4</SUB>";
+r_ansymbol[19] = "C<SUB>2</SUB>H<SUB>3</SUB>O<SUB>2</SUB>";
+r_ansymbol[20] = "NO<SUB>2</SUB>";
+r_ansymbol[21] = "HPO<SUB>4</SUB>";
+r_ansymbol[22] = "H<SUB>2</SUB>PO<SUB>4</SUB>";
+r_ansymbol[23] = "Cr<SUB>2</SUB>O<SUB>7</SUB>";
+r_ansymbol[24] = "CrO<SUB>4</SUB>";
+r_ansymbol[25] = "HCO<SUB>3</SUB>";
+r_ansymbol[26] = "MnO<SUB>4</SUB>";
+r_ansymbol[27] = "PO<SUB>3</SUB>";
+r_ansymbol[28] = "C<SUB>6</SUB>H<SUB>5</SUB>O<SUB>7</SUB>";
+r_ansymbol[29] = "AsO<SUB>4</SUB>";
+
+var r_ancharge = new Array();
+r_ancharge[0] = 1;
+r_ancharge[1] = 1;
+r_ancharge[2] = 1;
+r_ancharge[3] = 1;
+r_ancharge[4] = 2;
+r_ancharge[5] = 2;
+r_ancharge[6] = 3;
+r_ancharge[7] = 3;
+r_ancharge[8] = 1;
+r_ancharge[9] = 1;
+r_ancharge[10] = 2;
+r_ancharge[11] = 2;
+r_ancharge[12] = 3;
+r_ancharge[13] = 2;
+r_ancharge[14] = 1;
+r_ancharge[15] = 1;
+r_ancharge[16] = 1;
+r_ancharge[17] = 1;
+r_ancharge[18] = 1;
+r_ancharge[19] = 1;
+r_ancharge[20] = 1;
+r_ancharge[21] = 2;
+r_ancharge[22] = 1;
+r_ancharge[23] = 2;
+r_ancharge[24] = 2;
+r_ancharge[25] = 1;
+r_ancharge[26] = 1;
+r_ancharge[27] = 3;
+r_ancharge[28] = 3;
+r_ancharge[29] = 3;
+
+var anpoly = new Array();
+anpoly[0] = 1;
+anpoly[1] = 1;
+anpoly[2] = 1;
+anpoly[3] = 1;
+anpoly[4] = 1;
+anpoly[5] = 1;
+anpoly[6] = 1;
+anpoly[7] = 1;
+anpoly[8] = 2;
+anpoly[9] = 2;
+anpoly[10] = 2;
+anpoly[11] = 2;
+anpoly[12] = 2;
+anpoly[13] = 2;
+anpoly[14] = 2;
+anpoly[15] = 2;
+anpoly[16] = 2;
+anpoly[17] = 2;
+anpoly[18] = 2;
+anpoly[19] = 2;
+anpoly[20] = 2;
+anpoly[21] = 2;
+anpoly[22] = 2;
+anpoly[23] = 2;
+anpoly[24] = 2;
+anpoly[25] = 2;
+anpoly[26] = 2;
+anpoly[27] = 2;
+anpoly[28] = 2;
+anpoly[29] = 2;
+
+var subscript = [0,"","<SUB>2</SUB>","<SUB>3</SUB>","<SUB>4</SUB>"];
+
+var r_name = new Array();
+r_name[0] = "nitrogen trifluoride";
+r_name[1] = "nitrogen trichloride";
+r_name[2] = "nitrogen tribromide";
+r_name[3] = "nitrogen triiodide";
+r_name[4] = "carbon tetrfluoride";
+r_name[5] = "carbon tetrachloride";
+r_name[6] = "carbon tetrabromide";
+r_name[7] = "carbon tetraiodide";
+r_name[8] = "oxygen difluoride";
+r_name[9] = "oxygen dichloride";
+r_name[10] = "oxygen dibromide";
+r_name[11] = "oxygen diiodide";
+r_name[12] = "phosphorus trihydride";
+r_name[13] = "silicon tetrafluoride";
+r_name[14] = "silicon tetrachloride";
+r_name[15] = "phosphorus trifluoride";
+r_name[16] = "phosphorus pentafluoride";
+r_name[17] = "phosphorus trichloride";
+r_name[18] = "phosphorus pentachloride";
+r_name[19] = "sulfur difluoride";
+r_name[20] = "sulfur tetrafluoride";
+r_name[21] = "sulfur hexafluoride";
+r_name[22] = "sulfur dichloride";
+r_name[23] = "sulfur tetrachloride";
+r_name[24] = "sulfur hexachloride";
+r_name[25] = "nitrogen monoxide";
+r_name[26] = "dinitrogen monoxide";
+r_name[27] = "dinitrogen dioxide";
+r_name[28] = "dinitrogen trioxide";
+r_name[29] = "dinitrogen tetroxide";
+r_name[30] = "dinitrogen pentoxide";
+r_name[31] = "diphosphorus pentoxide";
+r_name[32] = "tetraphosphorus decoxide";
+r_name[33] = "disulfur decafluoride";
+r_name[34] = "sulfur hexabromide";
+r_name[35] = "sulfur dioixide";
+r_name[36] = "sulfur trioxide";
+r_name[37] = "silicon dioxide";
+r_name[38] = "carbon disulfide";
+r_name[39] = "carbon monoxide";
+r_name[40] = "carbon dioxide";
+
+var r_symbol = new Array();
+r_symbol[0] = "NF<SUB>3</SUB>";
+r_symbol[1] = "NCl<SUB>3</SUB>";
+r_symbol[2] = "NBr<SUB>3</SUB>";
+r_symbol[3] = "NI<SUB>3</SUB>";
+r_symbol[4] = "CF<SUB>4</SUB>";
+r_symbol[5] = "CCl<SUB>4</SUB>";
+r_symbol[6] = "CBr<SUB>4</SUB>";
+r_symbol[7] = "CI<SUB>4</SUB>";
+r_symbol[8] = "OF<SUB>2</SUB>";
+r_symbol[9] = "OCl<SUB>2</SUB>";
+r_symbol[10] = "OBr<SUB>2</SUB>";
+r_symbol[11] = "OI<SUB>2</SUB>";
+r_symbol[12] = "OF<SUB>2</SUB>";
+r_symbol[13] = "SiF<SUB>4</SUB>";
+r_symbol[14] = "SiCl<SUB>4</SUB>";
+r_symbol[15] = "PF<SUB>3</SUB>";
+r_symbol[16] = "PF<SUB>5</SUB>";
+r_symbol[17] = "PCl<SUB>3</SUB>";
+r_symbol[18] = "PCl<SUB>5</SUB>";
+r_symbol[19] = "SF<SUB>2</SUB>";
+r_symbol[20] = "SF<SUB>4</SUB>";
+r_symbol[21] = "SF<SUB>6</SUB>";
+r_symbol[22] = "SCl<SUB>2</SUB>";
+r_symbol[23] = "SCl<SUB>4</SUB>";
+r_symbol[24] = "SCl<SUB>6</SUB>";
+r_symbol[25] = "NO";
+r_symbol[26] = "N<SUB>2</SUB>O";
+r_symbol[27] = "N<SUB>2</SUB>O<SUB>2</SUB>";
+r_symbol[28] = "N<SUB>2</SUB>O<SUB>3</SUB>";
+r_symbol[29] = "N<SUB>2</SUB>O<SUB>4</SUB>";
+r_symbol[30] = "N<SUB>2</SUB>O<SUB>5</SUB>";
+r_symbol[31] = "P<SUB>2</SUB>O<SUB>5</SUB>";
+r_symbol[32] = "P<SUB>4</SUB>O<SUB>10</SUB>";
+r_symbol[33] = "S<SUB>2</SUB>F<SUB>10</SUB>";
+r_symbol[34] = "SBr<SUB>6</SUB>";
+r_symbol[35] = "SO<SUB>2</SUB>";
+r_symbol[36] = "SO<SUB>3</SUB>";
+r_symbol[37] = "SiO<SUB>2</SUB>";
+r_symbol[38] = "CS<SUB>2</SUB>";
+r_symbol[39] = "CO";
+r_symbol[40] = "CO<SUB>2</SUB>";
+
+var r_acidansymbol = new Array();
+r_acidansymbol[0] = "F";
+r_acidansymbol[1] = "Cl";
+r_acidansymbol[2] = "Br";
+r_acidansymbol[3] = "I";
+r_acidansymbol[4] = "S";
+r_acidansymbol[5] = "P";
+r_acidansymbol[6] = "NO\u2082";
+r_acidansymbol[7] = "NO\u2083";
+r_acidansymbol[8] = "SO\u2083";
+r_acidansymbol[9] = "SO\u2084";
+r_acidansymbol[10] = "PO\u2084";
+r_acidansymbol[11] = "CO\u2083";
+r_acidansymbol[12] = "CN";
+r_acidansymbol[13] = "CH\u2083COO";
+r_acidansymbol[14] = "MnO\u2084";
+r_acidansymbol[15] = "CrO\u2084";
+r_acidansymbol[16] = "Cr\u2082O\u2087";
+
+var r_acidancharge = new Array();
+r_acidancharge[0] = 1;
+r_acidancharge[1] = 1;
+r_acidancharge[2] = 1;
+r_acidancharge[3] = 1;
+r_acidancharge[4] = 2;
+r_acidancharge[5] = 3;
+r_acidancharge[6] = 1;
+r_acidancharge[7] = 1;
+r_acidancharge[8] = 2;
+r_acidancharge[9] = 2;
+r_acidancharge[10] = 3;
+r_acidancharge[11] = 2;
+r_acidancharge[12] = 1;
+r_acidancharge[13] = 1;
+r_acidancharge[14] = 1;
+r_acidancharge[15] = 2;
+r_acidancharge[16] = 2;
+
+var r_base = new Array();
+r_base[0] = "fluor";
+r_base[1] = "chlor";
+r_base[2] = "brom";
+r_base[3] = "iod";
+r_base[4] = "sulfur";
+r_base[5] = "phosphor";
+r_base[6] = "nitr";
+r_base[7] = "nitr";
+r_base[8] = "sulfur";
+r_base[9] = "sulfur";
+r_base[10] = "phosphor";
+r_base[11] = "carbon";
+r_base[12] = "cyan";
+r_base[13] = "acet";
+r_base[14] = "permangen";
+r_base[15] = "chrom";
+r_base[16] = "dichrom";
+
+var r_end = new Array();
+r_end[0] = 1;
+r_end[1] = 1;
+r_end[2] = 1;
+r_end[3] = 1;
+r_end[4] = 1;
+r_end[5] = 1;
+r_end[6] = 2;
+r_end[7] = 3;
+r_end[8] = 2;
+r_end[9] = 3;
+r_end[10] = 3;
+r_end[11] = 3;
+r_end[12] = 1;
+r_end[13] = 3;
+r_end[14] = 3;
+r_end[15] = 3;
+r_end[16] = 3;
+
+var r_hsub = new Array();
+r_hsub[1] = "";
+r_hsub[2] = "\u2082";
+r_hsub[3] = "\u2083";
+
+var acidWordName = function(){
+var a1 = Math.floor(Math.random()*r_acidansymbol.length);
+
+if(r_end[a1] == 1){
+document.write("hydro"+r_base[a1]+"ic acid");
+}
+else if(r_end[a1] == 2){
+document.write(r_base[a1]+"ous acid");
+}
+else{
+document.write(r_base[a1]+"ic acid");
+}
+}
+
+var acidSymbolName = function(){
+var a1 = Math.floor(Math.random()*r_acidansymbol.length);
+
+document.write("H"+r_hsub[r_acidancharge[a1]]+r_acidansymbol[a1]);
+}
+
+var symbolIName = function(){
+
+var a1 = Math.floor(Math.random()*(r_an.length));
+var c1 = Math.floor(Math.random()*(r_cat.length));
+
+r_C1 = r_catcharge[c1];
+r_A1 = r_ancharge[a1];
+
+polycat = catpoly[c1];
+polyan = anpoly[a1];
+
+cation = r_catsymbol[c1];
+anion = r_ansymbol[a1];
+
+if (r_C1 == r_A1){
+document.write(cation+anion);
+}
+    else if(polycat == 2 && r_A1 >= 2){
+    document.write("("+cation+")"+subscript[r_A1]);
+    } 
+    else {
+        document.write(cation+subscript[r_A1]);
+    }
+    
+    if (r_C1 == r_A1){}
+    else if(polyan == 2 && r_C1 >= 2){
+    document.write("("+anion+")"+subscript[r_C1]);
+    } 
+    else {
+        document.write(anion+subscript[r_C1]);
+    }
+
+};
+
+var wordIName = function(){
+var a1 = Math.floor(Math.random()*(r_an.length));
+var c1 = Math.floor(Math.random()*(r_cat.length));
+document.write(r_cat[c1]+" "+r_an[a1]);
+};
+
+var symbolBMName = function(){
+var c1 = Math.floor(Math.random()*41);
+document.write(r_symbol[c1]);
+};
+
+var wordBMName = function(){
+var c1 = Math.floor(Math.random()*41);
+document.write(r_name[c1]);
+};
+
+var CompoundNameOrSymbol = function(){
+var X = Math.floor(Math.random()*4);
+//var X = Math.floor(Math.random()*2);
+
+if(X == 0){
+	symbolIName();
+	}
+	else if(X == 1){
+	wordIName();
+	}
+	else if(X == 2){
+	wordBMName();
+	}
+	else if(X == 3){
+	symbolBMName();
+	}
+	else if(X == 4){
+	acidWordName();
+	}
+	else{
+	acidSymbolName();
+	}
+
+};
+
+var BMnameORsymbol = function(){
+var X = Math.floor(Math.random()*2);
+
+if(X == 0){
+	wordBMName();
+	}
+	else if(X == 1){
+	symbolBMName();
+	}
+};
+
+var IorBMsymbol= function(){
+var X = Math.floor(Math.random()*2);
+
+if(X == 0){
+	wordIName();
+	}
+	else if(X == 1){
+	wordBMName();
+	}
+};
+
+//the section below writes the test
+document.write("Write the chemical symbol for the 8 ionic compounds below:<br><br>");
+for(i=1;i<=8;i++){
+document.write(i+") "); wordIName(); document.write("______________________________________<br><br>");
+};
+
+document.write("<br>Write the chemical symbol or name for the 7 binary molecualr compounds compounds below:<br><br>");
+for(i=1;i<=7;i++){
+document.write(8+i+") "); BMnameORsymbol(); document.write("______________________________________<br><br>");
+};
+
+document.write("<br><br><br><br><br><br><br><br><br><br><br><br>The 20 problems below are either binary molecular OR ionic.  Write the chemical symbol for each problem.  Good luck.<br><br>");
+for(i=1;i<=20;i++){
+document.write(15+i+") "); IorBMsymbol(); document.write("______________________________________<br><br>");
+};
+
+</script>
+</body>
+</html> 
