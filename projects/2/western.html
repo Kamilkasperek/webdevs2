@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head><script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>Western Routes</title>
     <style>
          p, h1 {font-family: helvetica;}
          p {font-size:1.5em;line-height:1.5em; margin-left: 24px;}
          pre {font-size: 2em;}
-         div { background-color: blue}
          #westDiv { border: 5px solid black; margin: 4px; border-radius: 5px;}
          body {background-color:skyblue;}
-         .streetButton {color: black; background-color:green; border: 10px solid black;}
-         .streetButton {color: black; background-color:green; border: 10px solid black;;}
          a:link    {color:blue; background-color:transparent; text-decoration:none}
          a:visited {color:black; background-color:transparent; text-decoration:none}
          a:hover   {color:black; background-color:transparent; text-decoration:none}
@@ -18,17 +17,42 @@
       </style>
     </head>
     <body>
-        
+        <style>
+        .demo-card-square.mdl-card {
+          width: 320px;
+          height: 320px;
+        }
+        .demo-card-square > .mdl-card__title {
+          color: #fff;
+          background:
+            url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+        }
+        </style>
        <a href="index.html"><h1>@CTA Bus Tracker</h1></a>
-        
-        <div id="westDiv" style="float:left; width:44%;">
-             <a href="westernnorth.html"><h2 id="westernButton" class="streetButton">49/X49 Western Northbound to Berwyn </h2></a>
-        </div>
-        
-        
-        <div id="westDiv" style="float:right; width:44%;">
-            <a href="westernsouth.html"><h2 id="westernButton" class="streetButton">49/X49 Western Southbound to 79th</h2></a>
-        </div>
+        <div id="westernButton" style="float:left; width:30%; height:35%;" class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">77/X77 Belmont Eastbound to Diversey/Lakeshore</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="westernnorth.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Route
+        </a>
+      </div>
+    </div>
+    <div id="westernButton" style="float:right; width:30%; height:35%;" class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">477/X77 Belmont Westbound to Cumberland</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="westernsouth.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Route
+        </a>
+      </div>
+    </div>
         
         
     </body>

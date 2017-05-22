@@ -13,7 +13,7 @@
     </head>
     <body>
 
-    <h1>NBA Standings and League Leaders</h1>
+    <h1>NBA Standings</h1>
     
     <div class="template potholes">
         <h1 class="serviceType"></h1>
@@ -51,39 +51,51 @@
                 }).done (function (data) {
                   console.log(data);
                   
-                   $.each(data.conferences, function(index, value){
-                                console.log(value);
-                                var html= value.alias + "<br>";
-                                $.each(value.divisions, function(indexDiv, valueDiv){
-                                    html+=valueDiv.alias + "<br>";
-                                              $.each(data.teams, function(indexTM, valueTM){
-                                              console.log(value);
-                                              var html= value.alias + "<br>";
-                                                      $.each(value.market, function(indexMkt, valueMkt){
-                                                      html+=valueMkt.alias + "<br>";
-                                                          $.each(value.name, function(indexNm, valueNm){
-                                                          html+=valueNm.alias + "<br>";
-                                                              $.each(value.wins, function(indexWin, valueWin){
-                                                              html+=valueWin.alias + "<br>";
-                                                                  $.each(value.losses, function(indexLos, valueLos){
-                                                                  html+=valueLos.alias + "<br>";
-                                                                      $.each(value.win_pct, function(indexWpc, valueWpc){
-                                                                      html+=valueWpc.alias + "<br>";
+                  var team = data.conferences[0].divisions[1].teams[3];
+                    console.log(team)                  
+                  $('body').append(team.market + " " + team.name + "<br>" + "Wins: " + team.wins + " Losses: " + team.losses);
+                  
+                   var team = data.conferences[1].divisions[2].teams[1];
+                    console.log(team)                  
+                  $('body').append(team.market + " " + team.name + "<br>" + "Wins: " + team.wins + " Losses: " + team.losses);
+                  
+                //   $.each(data.conferences, function(index, value){
+                //                 //console.log(value);
+                //                 var html= value.alias + "<br>";
+                //                 $.each(value.divisions, function(indexDiv, valueDiv){
+                //                     html+= "DIVISION: " + valueDiv.alias + "<br>";
+                //                               $.each(valueDiv.teams, function(indexTM, valueTM){
+                //                               console.log(valueTM);
+                //                               html= valueTM.market + " " + valueTM.name + "<br>";
+                //                                       $.each(valueTM.market, function(indexMkt, valueMkt){
+                //                                       html+=valueMkt.alias + "<br>";
+                //                                           $.each(valueMkt.name, function(indexNm, valueNm){
+                //                                           html+=valueNm.alias + "<br>";
+                //                                               $.each(valueNm.wins, function(indexWin, valueWin){
+                //                                               html+=valueWin.alias + "<br>";
+                //                                                   $.each(valueWin.losses, function(indexLos, valueLos){
+                //                                                   html+=valueLos.alias + "<br>";
+                //                                                       $.each(value.Los, function(indexWpc, valueWpc){
+                //                                                       html+=valueWpc.alias + "<br>";
                                                                       
-                                                
+                //                                                       })
+                //                                                   })
+                //                                               })
+                //                                           })
+                //                                       })
+                //                                 })
                                     
-                                    
-                                });
-                                // '<div id="results"><h3>'+value.headline.main+'</h3> '+
-                                // '<p>date: ' + value.pub_date +"</p>" + 
-                                // '<p>source: ' +value.source + "</p>"+ 
-                                // '<p>section name: ' +value.section_name + "</p>"+
-                                // '<p>type of material: ' +value.type_of_material + "</p>"+
-                                // '<p>word count: ' +value.word_count + "</P>"
-                                // '</div>';
+                //                 });
+                //                 // '<div id="results"><h3>'+value.headline.main+'</h3> '+
+                //                 // '<p>date: ' + value.pub_date +"</p>" + 
+                //                 // '<p>source: ' +value.source + "</p>"+ 
+                //                 // '<p>section name: ' +value.section_name + "</p>"+
+                //                 // '<p>type of material: ' +value.type_of_material + "</p>"+
+                //                 // '<p>word count: ' +value.word_count + "</P>"
+                //                 // '</div>';
                                 
-                                $("body").append(html);
-                            })
+                //                 $("body").append(html);
+                //             })
                   
                   /*$.each(data["bustime-response"]["prd"], function(i,v) {
 

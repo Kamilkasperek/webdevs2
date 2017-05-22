@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>CTA BusTracker</title>
@@ -10,12 +13,11 @@
          pre {font-size: 2em;}
          div { background-color: white}
          #westDiv { border: 5px solid black; margin: 4px; border-radius: 5px;}
-         body {background: #c0c0aa; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #c0c0aa , #1ce); /* Chrome 10-25, Safari 5.1-6 */
+         body {background: ##00c3ff; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, ##00c3ff , #00c3ff); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #c0c0aa , #1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
 ;}
-         .streetButton {color: white; background-color:black; border: 10px solid black;;}
          a:link    {color:blue; background-color:transparent; text-decoration:none}
          a:visited {color:black; background-color:transparent; text-decoration:none}
          a:hover   {color:black; background-color:transparent; text-decoration:none}
@@ -25,17 +27,44 @@ background: linear-gradient(to left, #c0c0aa , #1ce); /* W3C, IE 10+/ Edge, Fire
     </head>
     
     <body>
-     
-        <h1>CTA Addison and Western Bus Tracker</h1>
+    <style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #00c3ff;
+}
+</style>
+<h1>CTA Addison and Western Bus Tracker</h1>
         <p style="color:white;">This CTA Bus Tracker will allow people to figure out the time schedule for Addison and Western bus stops around the Lane Tech area.
-          
-        <div id="westDiv" style="float:left; width:30%;">
-             <a href="western.html"><h2 class="streetButton">49 Western/X49 Western Express Routes</h2></a>
-        </div>
-          
-         <div id="westDiv" style="float:right; width:30%;">
-             <a href="addison.html"><h2 class="streetButton">152 Addison Routes</h2></a>
-        </div>
+<div id="westDiv" style="float:left; width:30%; height:35%;" class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">77 Belmont Routes</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="western.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Route
+        </a>
+      </div>
+    </div>
+    <div id="westDiv" style="float:right; width:30%; height:35%;" class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">152 Addison Routes</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="addison.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Route
+        </a>
+      </div>
+    </div>
+         
      
     </body>
 
